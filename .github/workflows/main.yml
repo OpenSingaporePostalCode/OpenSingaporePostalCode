@@ -22,6 +22,11 @@ jobs:
       - name: Export
         run: |
           python export.py
+        env:
+          MONGODB_HOST: ${{ secrets.MONGODB_HOST }}
+          MONGODB_USER: ${{ secrets.MONGODB_USER }}
+          MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+          MONGODB_NAME : ${{ secrets. MONGODB_NAME  }}
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
