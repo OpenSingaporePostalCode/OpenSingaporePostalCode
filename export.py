@@ -42,9 +42,9 @@ if __name__ == '__main__':
             mapping[postal] = road_name
 
     with open('road_name.csv', 'w') as csv_file:
-        fieldnames = ['postal', 'road_name']
+        fieldnames = ['code', 'name']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         writer.writeheader()
         for k, v in mapping.items():
-            writer.writerow({'postal': k, 'road_name': v})
+            writer.writerow({'code': k, 'name': v})

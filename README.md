@@ -1,2 +1,3 @@
 # OpenSingaporePostalCode
-Monthly export of postal code to road name data
+
+Monthly export of postal code to road name data.
