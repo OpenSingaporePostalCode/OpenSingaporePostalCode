@@ -41,7 +41,7 @@ if __name__ == '__main__':
             road_name = result['ROAD_NAME']
 
             mismatched = postal in mapping and  mapping[postal] != road_name
-            logging.warning('postal=%s mismatch road name') if mismatched else True
+            logging.warning('postal=%s mismatch road name', postal) if mismatched else True
 
             mapping[postal] = road_name
 
