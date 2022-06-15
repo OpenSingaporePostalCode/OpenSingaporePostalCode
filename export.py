@@ -34,6 +34,10 @@ if __name__ == '__main__':
     for code in codes.find({'found': {'$gt': 0}}):
         for result in code['results']:
             postal = result['POSTAL']
+            if postal and len(postal) != 6:
+                logging.warning('invalid postal=%s; skipping', postal)
+                continue 
+
             road_name = result['ROAD_NAME']
 
             mismatched = postal in mapping and  mapping[postal] != road_name
